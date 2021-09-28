@@ -1,5 +1,6 @@
 module.exports = {
   dest: "docs",
+  base: "/tutorial-github",
   title: "Tnl Computer",
   description: "Documentacion de ayuda",
 
