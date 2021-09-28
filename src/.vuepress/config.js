@@ -1,6 +1,6 @@
 module.exports = {
   dest: "docs",
-  title: "Tnl Computer",
+  title: "tutorial-github",
   description: "Documentacion de ayuda",
 
   head: [
