@@ -1,4 +1,4 @@
-# 04 - CSS Intermedio
+# CSS Intermedio
 Sigamos jugando con CSS.
 
 ## Bordes

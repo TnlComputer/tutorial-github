@@ -1,4 +1,4 @@
-# 06 - CSS Flexbox [Práctica]
+# CSS Flexbox [Práctica]
 
 Comenzaremos a crear nuestro primer sitio web con Flexbox
 
