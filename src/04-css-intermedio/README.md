@@ -131,7 +131,7 @@ En comparación con ``display: block``, la principal diferencia es que ``display
 
 <!-- Ver antes los anchos para conocer box -->
 ## box-sizing
-Para mantener el ancho a 300 px, sin importar la cantidad de relleno, puede usar la propiedad ``box-sizing``. Esto hace que el elemento mantenga su ancho; Si aumenta el relleno, el espacio de contenido disponible disminuirá.
+Para mantener el ancho a 300 px, sin importar la cantidad de relleno, puede usar la propiedad ``box-sizing: border-box``. Esto hace que el elemento mantenga su ancho; Si aumenta el relleno, el espacio de contenido disponible disminuirá.
 
 [https://www.w3schools.com/css/css3_box-sizing.asp](https://www.w3schools.com/css/css3_box-sizing.asp)
 
@@ -405,3 +405,6 @@ body {
     font-weight: 300;
 }
 ```
+
+## Hosting
+- [netlify.com](https://www.netlify.com/)

@@ -6,10 +6,9 @@ Comenzaremos a crear nuestro primer sitio web con Flexbox
 
 Ya habíamos trabajado con varios estilos por ende los vamos a reciclar:
 
-- [https://necolas.github.io/normalize.css/](https://necolas.github.io/normalize.css/)
-- Box-sizing: [https://css-tricks.com/box-sizing/](https://css-tricks.com/box-sizing/)
-- Fuente [https://fonts.google.com/specimen/Ubuntu?sidebar.open=true](https://fonts.google.com/specimen/Ubuntu?sidebar.open=true)
-- [https://www.w3schools.com/cssref/css_units.asp](https://www.w3schools.com/cssref/css_units.asp)
+- [Normalize](https://necolas.github.io/normalize.css/)
+- [Box-sizing](https://css-tricks.com/box-sizing/)
+- [Fuente Raleway](https://fonts.google.com/specimen/Raleway?query=rale)
 
 Otros recursos utilizados:
 
@@ -18,355 +17,674 @@ Otros recursos utilizados:
 - [https://www.iloveimg.com/es/redimensionar-imagen](https://www.iloveimg.com/es/redimensionar-imagen)
 - [https://developer.mozilla.org/es/docs/CSS/Media_queries](https://developer.mozilla.org/es/docs/CSS/Media_queries)
 
+## Header
 ```html
 <!DOCTYPE html>
 <html lang="es">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>ALTOS GAME</title>
-    <link rel="stylesheet" href="css/normalize.css" />
-    <link rel="stylesheet" href="css/estilos.css" />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400;500;700&display=swap"
-      rel="stylesheet"
-    />
-  </head>
 
-  <body></body>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alto's Game</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@100;200;300;400;500&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <header class="bg-header">
+        <div class="bg-navbar">
+            <div class="container">
+                <div class="navbar">
+                    <a href="/" class="navbar-brand">
+                        <img src="assets/icons/logo.svg" alt="Logo Altos Game">
+                        Alto's Game
+                    </a>
+                    <nav class="navbar-nav">
+                        <a href="" class="nav-link">Inicio</a>
+                        <a href="" class="nav-link">Tienda</a>
+                        <a href="" class="nav-link">Nosotros</a>
+                        <a href="" class="nav-link">Contacto</a>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </header>
+</body>
+
 </html>
 ```
 
 ```css
 html {
-  box-sizing: border-box;
-  font-family: "Ubuntu", sans-serif;
+    box-sizing: border-box;
 }
+
 *,
 *:before,
 *:after {
-  box-sizing: inherit;
+    box-sizing: inherit;
 }
 
+body {
+    font-family: 'Raleway', sans-serif;
+}
+
+/* Utilidades */
 .container {
-  width: 80%;
+    width: 80%;
+    max-width: 1280px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
-/* Espaciados */
-.mx-auto {
-  margin-left: auto;
-  margin-right: auto;
+.bg-header {
+    background-image: url('../assets/images/bg-header.jpg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    height: 18.75em;
 }
 
-/* Textos */
-.text-white {
-  color: #ffffff;
+.bg-navbar {
+    background-color: rgba(0, 0, 0, 0.157);
+    padding: 1.5em 0;
 }
 
-.text-center {
-  text-align: center;
+.navbar {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
-/* Colores */
-.bg-primary {
-  background-color: #2d2c59;
+.navbar-brand {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-decoration: none;
+    color: white;
+    font-size: 2rem;
+    margin-bottom: 1em;
+    font-weight: 500;
 }
 
-.bg-secondary {
-  background-color: #bf2a37;
+.navbar-brand img {
+    width: 2em;
 }
 
-.bg-danger {
-  background-color: #18261c;
+.navbar-nav {
+    background-color: rgba(0, 0, 0, 0.750);
+    padding: 1em;
+    border-radius: 0.3em;
 }
 
-.bg-light {
-  background-color: #9fbfa7;
+.nav-link {
+    display: inline-block;
+    text-decoration: none;
+    color: white;
+    font-size: 1rem;
+    padding: 0.3em;
 }
 
-.bg-dark {
-  background-color: #151226;
+.nav-link:hover {
+    background-color: white;
+    color: black;
+    border-radius: 0.5em;
+}
+```
+
+## Main & Tienda
+```html
+<main class="container main">
+    <h1 class="main-title">Nuestros productos</h1>
+    <section class="tienda">
+        <article class="card">
+            <img src="assets/images/card-1.png" alt="" class="card-img">
+            <div class="card-body">
+                <h5>Lorem, ipsum dolor.</h5>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eveniet exercitationem quod adipisci a
+                    eaque tempore recusandae voluptatibus atque sed ratione dolores, officia deserunt et dolorum
+                    sunt
+                    velit quis excepturi eius.</p>
+                <a href="https://www.google.cl/" target="_blanck" class="btn btn-dark">Comprar</a>
+            </div>
+        </article>
+        <article class="card">
+            <img src="assets/images/card-1.png" alt="" class="card-img">
+            <div class="card-body">
+                <h5>Lorem, ipsum dolor.</h5>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eveniet exercitationem quod adipisci a
+                    eaque tempore recusandae voluptatibus atque sed ratione dolores, officia deserunt et dolorum
+                    sunt
+                    velit quis excepturi eius.</p>
+                <a href="https://www.google.cl/" target="_blanck" class="btn btn-dark">Comprar</a>
+            </div>
+        </article>
+        <article class="card">
+            <img src="assets/images/card-1.png" alt="" class="card-img">
+            <div class="card-body">
+                <h5>Lorem, ipsum dolor.</h5>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eveniet exercitationem quod adipisci a
+                    eaque tempore recusandae voluptatibus atque sed ratione dolores, officia deserunt et dolorum
+                    sunt
+                    velit quis excepturi eius.</p>
+                <a href="https://www.google.cl/" target="_blanck" class="btn btn-dark">Comprar</a>
+            </div>
+        </article>
+    </section>
+</main>
+```
+
+```css
+/* Utilidades */
+.container {
+    width: 80%;
+    max-width: 1280px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
-/* Componentes */
 .btn {
-  display: inline-block;
-  padding: 1rem 1.5rem;
-  border-radius: 0.25rem;
-  text-decoration: none;
-  text-transform: uppercase;
+    display: inline-block;
+    text-decoration: none;
+    font-size: 1rem;
+    padding: 0.5em;
+    margin: 0 0.1em;
+    border-radius: 0.5em;
 }
 
+.btn-primary {
+    color: white;
+    background-color: #214037;
+}
+
+.btn-secondary {
+    color: white;
+    background-color: #77A699;
+}
+
+.btn-danger {
+    color: white;
+    background-color: #A6464E;
+}
+
+.btn-info {
+    color: black;
+    background-color: #E2F2C9;
+}
+
+.btn-dark {
+    color: white;
+    background-color: #2F2E2E;
+}
+
+/* MAIN */
+.main {
+    background-color: white;
+    margin-top: -2rem;
+    border-radius: 0.3em;
+    padding: 0.3em;
+}
+
+.main-title {
+    text-align: center;
+    text-transform: uppercase;
+}
+
+/* CARD */
 .card {
-  border: 1px solid rgba(0, 0, 0, 0.125);
-  border-radius: 5px;
+    background-color: #A6464E;
+    color: white;
+    overflow: hidden;
+    border-radius: 0.5em;
+    margin-bottom: 1em;
 }
 
 .card-img {
-  width: 100%;
-  height: 250px;
-  border-top-left-radius: 5px;
-  border-top-right-radius: 5px;
+    width: 100%;
 }
 
 .card-body {
-  padding: 1.5rem;
+    padding: 1em;
 }
 
-.card-title {
-  font-size: 2rem;
-  font-weight: 300;
-  margin: 0;
-  color: #383e56;
+.card-body h5 {
+    font-size: 1.5rem;
+    margin: 1em 0;
+    font-weight: 500;
 }
 
-.card-text {
-  line-height: 1.5;
+.card-body p {
+    font-weight: 300;
 }
 ```
 
-## Navbar
-
-- Hover: [https://www.w3schools.com/cssref/sel_hover.asp](https://www.w3schools.com/cssref/sel_hover.asp)
-- CSS selectores Avanzados [https://lenguajecss.com/css/selectores/selectores-avanzados/](https://lenguajecss.com/css/selectores/selectores-avanzados/)
-
+## Nosotros
 ```html
-<div class="bg-dark">
-  <nav class="container mx-auto navbar">
-    <div class="navbar-logo">
-      <a href="#">ALTOs WEB</a>
+<section class="nosotros">
+    <div class="nosotros-col-img"></div>
+    <div class="nosotros-col-text">
+        <div class="nosotros-body">
+            <h2>Nosotros</h2>
+            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Natus omnis, incidunt velit voluptatum
+                officia
+                nulla enim ea ducimus maiores consequatur earum quisquam sapiente architecto magnam provident
+                ratione
+                quibusdam aperiam sit?
+            </p>
+            <a href="#" class="btn btn-danger">Más información</a>
+        </div>
     </div>
-    <div class="navbar-menu">
-      <a href="#" class="btn bg-secondary">Inicio</a>
-      <a href="#" class="btn bg-secondary">Nosotros</a>
-      <a href="#" class="btn bg-secondary">Servicios</a>
-      <a href="#" class="btn bg-secondary">Contacto</a>
-    </div>
-  </nav>
-</div>
-```
-
-```css
-.navbar {
-  padding: 2rem 0;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.navbar-logo a {
-  text-decoration: none;
-  color: white;
-  font-size: 2rem;
-}
-
-.navbar-menu a {
-  color: white;
-}
-
-.navbar-menu a:hover {
-  background-color: black;
-}
-```
-
-## Cards
-
-```html
-<section class="container mx-auto">
-  <div class="center">
-    <h1>Lorem, ipsum dolor.</h1>
-    <hr />
-    <p>
-      Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum, fuga?
-      Alias porro autem veniam. Obcaecati velit necessitatibus possimus vero
-      dignissimos tenetur maxime, reprehenderit animi placeat quam dolorum natus
-      ab quibusdam.
-    </p>
-  </div>
-
-  <div class="main-card">
-    <!-- cards -->
-    <div class="card">
-      <img src="images/card-1.png" class="card-img" alt="..." />
-      <div class="card-body">
-        <h5 class="card-title">Card title</h5>
-        <p class="card-text">
-          Some quick example text to build on the card title and make up the
-          bulk of the card's content.
-        </p>
-        <a href="#" class="btn bg-primary text-white">Go somewhere</a>
-      </div>
-    </div>
-    <!-- cards -->
-    <div class="card">
-      <img src="images/card-2.jpg" class="card-img" alt="..." />
-      <div class="card-body">
-        <h5 class="card-title">Card title</h5>
-        <p class="card-text">
-          Some quick example text to build on the card title and make up the
-          bulk of the card's content.
-        </p>
-        <a href="#" class="btn bg-primary text-white">Go somewhere</a>
-      </div>
-    </div>
-    <!-- cards -->
-    <div class="card">
-      <img src="images/card-3.jpg" class="card-img" alt="..." />
-      <div class="card-body">
-        <h5 class="card-title">Card title</h5>
-        <p class="card-text">
-          Some quick example text to build on the card title and make up the
-          bulk of the card's content.
-        </p>
-        <a href="#" class="btn bg-primary text-white">Go somewhere</a>
-      </div>
-    </div>
-  </div>
 </section>
 ```
 
 ```css
-/* Main seccion */
-.card {
-  border: 1px solid rgba(0, 0, 0, 0.125);
-  border-radius: 5px;
-  flex: 1;
+/* NOSOTROS */
+.nosotros {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 1em;
+    background-color: #2F2E2E;
 }
 
-.card a:hover {
-  background-color: black;
+.nosotros-col-img {
+    order: 2;
+    background-image: url('../assets/images/perfil-dos.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 350px;
+    width: 100%;
+}
+
+.nosotros-col-text {
+    order: 1;
+}
+
+.nosotros-body {
+    padding: 1em;
+    text-align: center;
+    color: white;
+}
+
+.nosotros-body h2 {
+    text-transform: uppercase;
+    font-weight: 500;
+}
+
+.nosotros-body p {
+    font-weight: 200;
+}
+```
+
+## Footer
+```html
+<footer class="bg-footer">
+    <div class="container">
+        <p>Lorem, ipsum dolor.</p>
+    </div>
+</footer>
+```
+
+```css
+/* FOOTER */
+.bg-footer {
+    background-color: #214037;
+    color: #E2F2C9;
+}
+
+.bg-footer p {
+    padding: 1em;
+    margin: 0;
+    text-align: center;
+}
+```
+
+## Media Queries
+
+- [media queries](https://developer.mozilla.org/es/docs/Web/CSS/Media_Queries/Using_media_queries)
+
+El resultado de la consulta es "verdadero" cuando el tipo de medio (si se especifica) coincide con el dispositivo en el que se está mostrando el documento y todas las expresiones en el media query son "verdaderas". En este caso, se aplica los estilos correspondientes, siguiendo las reglas usuales de cascada.
+
+```html
+<!-- CSS media query on a link element -->
+<link rel="stylesheet" media="(max-width: 800px)" href="example.css" />
+
+<!-- CSS media query within a style sheet -->
+<style>
+@media (max-width: 600px) {
+  .facet_sidebar {
+    display: none;
+  }
+}
+</style>
+```
+
+#### Ejemplo:
+```html
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Media Queries</title>
+    <style>
+        main {
+            background-color: black;
+            color: white;
+        }
+
+        @media (min-width: 576px) {
+            main {
+                background-color: peru;
+            }
+        }
+
+        @media (min-width: 768px) {
+            main {
+                background-color: tomato;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <main>
+        <article>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed a, accusamus culpa voluptatem quasi
+                dignissimos officia necessitatibus ad quod voluptate ipsa expedita enim ratione perspiciatis, omnis
+                asperiores totam esse architecto.</p>
+        </article>
+        <article>
+            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ex, sed porro. Quis, ipsa architecto
+                accusantium, porro dolorem officia, repellat rem nostrum doloremque sunt saepe quaerat dicta quod amet
+                illo quo.</p>
+        </article>
+    </main>
+</body>
+
+</html>
+```
+
+#### Ejemplo flexbox:
+```css
+@media (min-width: 576px) {
+    main {
+        background-color: peru;
+        display: flex;
+    }
+
+    article {
+        margin: 2em;
+        font-size: 1.5rem;
+    }
+}
+
+@media (min-width: 768px) {
+    main {
+        background-color: tomato;
+    }
+
+    article {
+        font-size: 2rem;
+    }
+}
+```
+
+## Práctica Responsive
+```css
+html {
+    box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+    box-sizing: inherit;
+}
+
+body {
+    font-family: 'Raleway', sans-serif;
+}
+
+/* Utilidades */
+.container {
+    width: 80%;
+    max-width: 1280px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.btn {
+    display: inline-block;
+    text-decoration: none;
+    font-size: 1rem;
+    padding: 0.5em;
+    margin: 0 0.1em;
+    border-radius: 0.5em;
+}
+
+.btn-primary {
+    color: white;
+    background-color: #214037;
+}
+
+.btn-secondary {
+    color: white;
+    background-color: #77A699;
+}
+
+.btn-danger {
+    color: white;
+    background-color: #A6464E;
+}
+
+.btn-info {
+    color: black;
+    background-color: #E2F2C9;
+}
+
+.btn-dark {
+    color: white;
+    background-color: #2F2E2E;
+}
+
+/* HEADER */
+.bg-header {
+    background-image: url('../assets/images/bg-header.jpg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    height: 18.75em;
+}
+
+.bg-navbar {
+    background-color: rgba(0, 0, 0, 0.157);
+    padding: 1.5em 0;
+}
+
+.navbar {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+@media (min-width: 768px) {
+    .navbar {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+}
+
+.navbar-brand {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-decoration: none;
+    color: white;
+    font-size: 2rem;
+    margin-bottom: 1em;
+    font-weight: 500;
+}
+
+@media (min-width: 768px) {
+    .navbar-brand {
+        flex-direction: row;
+        margin-bottom: 0;
+    }
+}
+
+.navbar-brand img {
+    width: 2em;
+}
+
+.navbar-nav {
+    background-color: rgba(0, 0, 0, 0.750);
+    padding: 1em;
+    border-radius: 0.3em;
+}
+
+.nav-link {
+    display: inline-block;
+    text-decoration: none;
+    color: white;
+    font-size: 1rem;
+    padding: 0.3em;
+}
+
+.nav-link:hover {
+    background-color: white;
+    color: black;
+    border-radius: 0.5em;
+}
+
+/* MAIN */
+.main {
+    background-color: white;
+    margin-top: -2rem;
+    border-radius: 0.3em;
+    padding: 0.3em;
+}
+
+.main-title {
+    text-align: center;
+    text-transform: uppercase;
+}
+
+@media (min-width: 768px) {
+    .tienda {
+        display: flex;
+        gap: 1em;
+    }
+}
+
+/* CARD */
+.card {
+    background-color: #A6464E;
+    color: white;
+    overflow: hidden;
+    border-radius: 0.5em;
+    margin-bottom: 1em;
 }
 
 .card-img {
-  width: 100%;
-  height: auto;
-  border-top-left-radius: 5px;
-  border-top-right-radius: 5px;
-}
-
-.center {
-  text-align: center;
-  margin: 3rem 0;
-}
-.center h1 {
-  font-weight: 300;
-  color: #383e56;
-}
-.center hr {
-  border-style: solid;
-  border-color: #383e56;
-}
-
-.main-card {
-  margin-top: 2rem;
-  display: flex;
-  gap: 1rem;
-}
-```
-
-## Vertical Card
-
-```html
-<section class="container mx-auto">
-  <div class="vertical-card bg-primary">
-    <img src="images/perfil-dos.png" alt="" />
-    <div class="vertical-card-content">
-      <h3>Lorem, ipsum dolor.</h3>
-      <hr />
-      <p>
-        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Tempora
-        architecto excepturi, nostrum error quam rem esse hic deserunt
-        voluptates pariatur maiores officiis. Totam non, aperiam numquam quam
-        suscipit et. Temporibus!
-      </p>
-      <a href="#" class="btn bg-secondary text-white">Go somewhere</a>
-    </div>
-  </div>
-</section>
-```
-
-```css
-/* Vertical Card */
-.vertical-card {
-  margin: 5rem 0;
-  display: flex;
-  align-items: center;
-}
-
-.vertical-card img {
-  width: 400px;
-}
-
-.vertical-card-content {
-  padding: 0 3rem;
-  color: white;
-}
-
-.vertical-card-content h3 {
-  font-weight: 300;
-  font-size: 2rem;
-}
-
-.vertical-card-content p {
-  font-weight: 300;
-}
-
-.vertical-card-contentd hr {
-  border-style: solid;
-  border-color: white;
-}
-```
-
-## Web Responsive
-
-```css
-/* Responsive */
-@media (max-width: 1090px) {
-  /* navbar */
-  .navbar {
-    flex-direction: column;
-  }
-  .navbar-menu {
-    margin-top: 2rem;
-  }
-
-  /* Vertical Card  */
-  .vertical-card img {
-    width: 300px;
-  }
-}
-
-@media (max-width: 860px) {
-  /* card */
-  .main-card {
-    flex-direction: column;
-  }
-
-  /* Vertical Card  */
-  .vertical-card {
-    flex-direction: column;
-  }
-  .vertical-card-content {
-    padding-top: 2rem;
-    padding-bottom: 3rem;
-  }
-  .vertical-card img {
     width: 100%;
-    height: auto;
-  }
 }
 
-@media (max-width: 685px) {
-  /* navbar */
-  .navbar-menu {
+.card-body {
+    padding: 1em;
+}
+
+.card-body h5 {
+    font-size: 1.5rem;
+    margin: 1em 0;
+    font-weight: 500;
+}
+
+.card-body p {
+    font-weight: 300;
+}
+
+/* NOSOTROS */
+.nosotros {
     display: flex;
     flex-direction: column;
+    align-items: center;
+    margin-bottom: 1em;
+    background-color: #2F2E2E;
+}
+
+.nosotros-col-img {
+    order: 2;
+    background-image: url('../assets/images/perfil-dos.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 350px;
     width: 100%;
-  }
-  .navbar-menu a {
+}
+
+.nosotros-col-text {
+    order: 1;
+}
+
+@media (min-width: 576px) {
+    .nosotros-col-img {
+        height: 500px;
+    }
+}
+
+@media (min-width: 768px) {
+    .nosotros {
+        flex-direction: row;
+    }
+
+    .nosotros-col-img {
+        order: 1;
+        flex: 1 1 0;
+    }
+
+    .nosotros-col-text {
+        order: 2;
+        flex: 1 1 0;
+    }
+}
+
+.nosotros-body {
+    padding: 1em;
     text-align: center;
-    margin-bottom: 1rem;
-  }
+    color: white;
+}
+
+.nosotros-body h2 {
+    text-transform: uppercase;
+    font-weight: 500;
+}
+
+.nosotros-body p {
+    font-weight: 200;
+}
+
+/* FOOTER */
+.bg-footer {
+    background-color: #214037;
+    color: #E2F2C9;
+}
+
+.bg-footer p {
+    padding: 1em;
+    margin: 0;
+    text-align: center;
 }
 ```
+
+## Hosting
+- [netlify.com](https://www.netlify.com/)
