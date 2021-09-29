@@ -16,7 +16,7 @@ module.exports = {
   themeConfig: {
     editLinks: false,
     editLinkText: "",
-    lastUpdated: false,
+    lastUpdated: true,
     nav: [
       {
         text: "Tutos",
